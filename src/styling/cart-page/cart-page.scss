@@ -1,0 +1,73 @@
+.flexbox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.shopping-card-container {
+    width: 72%;
+  }
+
+  hr{
+    margin: 0px 15px 0px 15px;
+    color: #989797;
+  }
+  
+  .shopping-box {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    transition: 0.4s;
+
+        .img3s {
+            width: 15%;
+            height: 200;
+            object-fit: contain;
+          }
+
+        .size {
+            font-size: 1rem;
+            color: #666;
+        }
+        .price {
+          font-size: 1.2rem;
+          font-weight: 600;
+      }
+
+        .button-point{
+            display: flex;
+            justify-content: space-around;
+            width: auto;
+            border-radius: 20px;
+            font-size: 15px;
+            border: 2px solid #ffd814;
+            margin-top: 80%;
+            cursor: pointer;
+
+        &:hover{
+            background-color: #ffd000;
+        }
+    }
+  }
+
+  .buy-box{
+    width: 23%;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    transition: 0.4s;
+    margin-bottom: 1.5%;
+    text-align: center;
+    padding-top: 30px;
+
+    .buy-button{
+        width: 80%;
+        border-radius: 20px;
+        background-color: #ffd000;
+        padding: 5px;
+        margin-top: 10%;
+    }
+  }
