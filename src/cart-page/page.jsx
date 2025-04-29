@@ -1,82 +1,34 @@
-import { useState } from 'react'
 import '../styling/cart-page/cart-page.scss';
-
-const initialData = [
-    {
-      id: 1,
-      title: "Formal white shirt",
-      image: "https://m.media-amazon.com/images/I/61idJrfaIRL._AC_UL480_QL65_.jpg",
-      size: "Large",
-      price: 684,
-      order_qty:2,
-    },
-    {
-      id: 2,
-      title: "Stripped shirt",
-      image: "https://m.media-amazon.com/images/I/711aUSDW66L._AC_UL480_QL65_.jpg",
-      size: "Large",
-      price: 565,
-      order_qty:4,
-    },
-];
-
-function getTotalAmount() {
-  let total = 0;
-  for (let i = 0; i < initialData.length; i++) {
-    total += initialData[i].price * initialData[i].order_qty;
-  }
-  return total;
-}
-function getTotalItems() {
-  let totalItems = 0;
-  for (let i = 0; i < initialData.length; i++) {
-    totalItems += initialData[i].order_qty;
-  }
-  return totalItems;
-}
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { cartState, totalCartAmountState } from '../state/cart-state';
 
 const CartPage = () => {
-  const [cardData, setCardData] = useState(initialData);
+  const [cartData, setCartData] = useRecoilState(cartState);
+  const totalAmount = useRecoilValue(totalCartAmountState); // ✅ No setTotalAmount anymore
+  console.log("cart data :", cartData);
 
-  const handleAddCart = (e) => {
-    setCardData((prevData) => {
-      return prevData.map((item) => {
-        if (item.id === parseInt(e.target.id)) {
-          return { ...item, order_qty: item.order_qty + 1 };
-        }
-        return item;
-      });
-    }
-    );
-  }
+  
   const handleIncrement = (e) => {
-    console.log(e.target.id);
-    setCardData((prevData) => {
-      return prevData.map((item) => {
-        if (item.id === parseInt(e.target.id)) {
-          return { ...item, order_qty: item.order_qty + 1 };
-        }
-        return item;
-      });
-    }
+    const id = parseInt(e.target.id);
+    setCartData((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, order_qty: item.order_qty +1 } : item
+      )
     );
   }
 
   const handleDecrement = (e) => {
-    setCardData((prevData) => {
-      return prevData.map((item) => {
-        if (item.id === parseInt(e.target.id)) {
-          return { ...item, order_qty: item.order_qty -1 };
-        }
-        return item;
-      });
-    }
+    const id = parseInt(e.target.id);
+    setCartData((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, order_qty: item.order_qty -1 } : item
+      )
     );
   }
   return (
     <div>
-    {cardData.map((item) => (
-      <div key={item.id} className='shopping-card-container-flexbox'>
+    {cartData.map((item) => (
+      <div key={item.id} className='flexbox'>
         <div className="shopping-card-container">
         {item.order_qty>=1?
           <div  className="shopping-box">
@@ -105,7 +57,7 @@ const CartPage = () => {
         :<div></div>}
       </div>
                 <div className='buy-box'>
-                    <p ><b>Subtotal ({getTotalItems()} item):</b> ₹{getTotalAmount()}</p>
+                    <p ><b>Subtotal ({cartData.length} item):</b> ₹{totalAmount}</p>
                     <button className='buy-button'>Proceed to buy</button>
                 </div>
 

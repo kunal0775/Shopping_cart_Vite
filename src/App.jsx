@@ -1,23 +1,20 @@
-import React from 'react'
-import './App.css'
-import HomePage from "./home/page";
-import CartPage from "./cart-page/page";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import './App.css';
+import HomePage from './home/page';
+import CartPage from './cart-page/page';
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './components/navbar';
 
 function App() {
-
   return (
     <>
-    {/* <BrowserRouter>
+      <NavBar />
       <Routes>
-        <Route path="/home/page" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/cart-page" element={<CartPage />} />
       </Routes>
-    </BrowserRouter> */}
-    <HomePage />
-    <CartPage />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
