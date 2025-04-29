@@ -76,7 +76,7 @@ const CartPage = () => {
   return (
     <div>
     {cardData.map((item) => (
-      <div key={item.id} className='flexbox'>
+      <div key={item.id} className='shopping-card-container-flexbox'>
         <div className="shopping-card-container">
         {item.order_qty>=1?
           <div  className="shopping-box">

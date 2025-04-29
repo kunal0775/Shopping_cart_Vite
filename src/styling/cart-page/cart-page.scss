@@ -2,11 +2,18 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.shopping-card-container-flexbox{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .shopping-card-container {
-    width: 72%;
+    width: 70%;
   }
 
   hr{
