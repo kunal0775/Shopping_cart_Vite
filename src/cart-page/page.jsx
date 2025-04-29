@@ -2,6 +2,7 @@ import '../styling/cart-page/cart-page.scss';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { cartState, totalCartAmountState } from '../state/cart-state';
 
+
 const CartPage = () => {
   const [cartData, setCartData] = useRecoilState(cartState);
   const totalAmount = useRecoilValue(totalCartAmountState); // ✅ No setTotalAmount anymore
@@ -46,12 +47,12 @@ const CartPage = () => {
               <p className='size'>Size: {item.size}</p>
         
               <div className='button-point'>
-                  <button id={item.id} onClick={handleDecrement}>{item.order_qty>1?"-":"🗑️"}</button>
-                  <button> {item.order_qty} </button>
-                  <button id={item.id} onClick={handleIncrement}>+</button>
+                  <button className='button-increment-decrement-point' id={item.id} onClick={handleDecrement}>{item.order_qty>1?"-":"🗑️"}</button>
+                  <button className='button-increment-decrement-point'> {item.order_qty} </button>
+                  <button className='button-increment-decrement-point' id={item.id} onClick={handleIncrement}>+</button>
               </div>
             </div>
-            <p className='price'>₹ {item.price}</p>
+            <p className='price'>{item.price}</p>
         </div>
         </div>
         :<div></div>}

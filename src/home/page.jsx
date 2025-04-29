@@ -172,11 +172,11 @@ const HomePage = () => {
                 </button>
               ) : (
                 <div className="add-button">
-                  <button id={item.id} onClick={handleDecrement}>
+                  <button className='add-button-increment-decrement' id={item.id} onClick={handleDecrement}>
                     {item.order_qty > 1 ? '-' : '🗑️'}
                   </button>
-                  <button style={{ margin: '0 10px' }}>{item.order_qty}</button>
-                  <button id={item.id} onClick={handleIncrement}>
+                  <button className='add-button-increment-decrement' style={{ margin: '0 10px' }}>{item.order_qty}</button>
+                  <button className='add-button-increment-decrement' id={item.id} onClick={handleIncrement}>
                     +
                   </button>
                 </div>

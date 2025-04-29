@@ -2,8 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-left: 2%;
-    margin-right: 2%;
+    padding: 30px;
 }
 
 .shopping-card-container-flexbox{
@@ -53,6 +52,11 @@
             margin-top: 80%;
             cursor: pointer;
 
+        .button-increment-decrement-point{
+            border: none;
+            background-color: transparent;
+        }
+
         &:hover{
             background-color: #ffd000;
         }
@@ -61,7 +65,7 @@
 
   .buy-box{
     width: 23%;
-    height: 150px;
+    height: 120px;
     border-radius: 5px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
     background: #fff;
@@ -72,9 +76,10 @@
 
     .buy-button{
         width: 80%;
+        border: none;
         border-radius: 20px;
         background-color: #ffd000;
-        padding: 5px;
+        padding: 6px;
         margin-top: 10%;
     }
   }

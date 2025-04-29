@@ -66,8 +66,14 @@ h2{
         font-size: 13px;
         background-color: #ffd814;
         margin-bottom: 20px;
-        cursor: pointer;
         border: none;
+      
+        .add-button-increment-decrement{
+            border: none;
+            background-color: transparent;
+            font-size: 15px;
+            cursor: pointer;
+        }
 
         &:hover{
             background-color: #ffd000;
