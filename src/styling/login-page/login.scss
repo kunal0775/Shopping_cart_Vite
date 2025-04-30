@@ -1,0 +1,60 @@
+.form-container{
+    background-image: url('https://static.webuters.com/2023/02/Unique-Features-of-Shopify-1024x576.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-blend-mode: color-burn;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.form-box{
+    box-shadow: 0 0 5px 0;
+    backdrop-filter: blur(10px);
+    width: 25%;
+    height: auto;
+    padding: 30px;
+    color: white;
+    border-radius:5%;
+    text-align: center;
+}
+
+input{
+    width: 90%;
+    height: 27px;
+    border: 1px solid white;
+    border-radius: 50px;
+    background-color: transparent;
+    margin: 20px;
+}
+input::placeholder {
+    color: #f3eeee;
+    font-size: 11px;
+    padding: 5px;
+}
+
+input:not(:placeholder-shown) {
+    background-color: transparent;
+    color: white;
+    padding: 7px;
+}
+
+input:focus{
+    color: white;
+    outline: none;
+    padding: 8px;
+    background-color: transparent;
+}
+
+button{
+    background-color:rgb(90, 143, 78);
+    border: none;
+    color: white;
+    border: 1px solid rgb(90, 143, 78);
+    border-radius: 20px;
+    padding: 3px 13px;
+    margin: 20px;
+    cursor: pointer;
+}
+
