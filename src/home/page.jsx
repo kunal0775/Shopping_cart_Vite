@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import '../styling/home/home.scss';
-import '../styling/cart-page/cart-page.scss';
 import { useRecoilState } from 'recoil';
 import { cartState } from '../state/cart-state';
+import Navbar from '../components/navbar';
 
 const initialData = [
   {
@@ -10,6 +10,7 @@ const initialData = [
     title: 'Formal white shirt',
     image: 'https://m.media-amazon.com/images/I/61idJrfaIRL._AC_UL480_QL65_.jpg',
     price: '₹ 684',
+    size: 'M',
     order_qty: 0,
   },
   {
@@ -17,6 +18,7 @@ const initialData = [
     title: 'Stripped shirt',
     image: 'https://m.media-amazon.com/images/I/711aUSDW66L._AC_UL480_QL65_.jpg',
     price: '₹ 565',
+    size: 'L',
     order_qty: 0,
   },
   {
@@ -24,6 +26,7 @@ const initialData = [
     title: 'Blue casual shirt',
     image: 'https://m.media-amazon.com/images/I/51fVQasKeNL._AC_UL480_QL65_.jpg',
     price: '₹ 654',
+    size: 'M',
     order_qty: 0,
   },
   {
@@ -31,6 +34,7 @@ const initialData = [
     title: 'Green outing shirt',
     image: 'https://m.media-amazon.com/images/I/714r0xXLL6L._AC_UL480_QL65_.jpg',
     price: '₹ 766',
+    size: 'L',
     order_qty: 0,
   },
   {
@@ -38,6 +42,7 @@ const initialData = [
     title: 'Denim shirt',
     image: 'https://m.media-amazon.com/images/I/81uTb5UwUgL._AC_UL480_QL65_.jpg',
     price: '₹ 876',
+    size: 'S',
     order_qty: 0,
   },
   {
@@ -45,6 +50,7 @@ const initialData = [
     title: 'Denim pink shirt',
     image: 'https://m.media-amazon.com/images/I/71YpLqxFChL._AC_UL480_QL65_.jpg',
     price: '₹ 467',
+    size: 'S',
     order_qty: 0,
   },
   {
@@ -52,6 +58,7 @@ const initialData = [
     title: 'Navy casual shirt',
     image: 'https://m.media-amazon.com/images/I/51-pLhPHoBL._AC_UL480_QL65_.jpg',
     price: '₹ 643',
+    size: 'L',
     order_qty: 0,
   },
   {
@@ -59,6 +66,7 @@ const initialData = [
     title: 'Checked casual half shirt',
     image: 'https://m.media-amazon.com/images/I/71D-olo8gXL._AC_UL480_QL65_.jpg',
     price: '₹ 545',
+    size: 'XL',
     order_qty: 0,
   },
   {
@@ -66,6 +74,7 @@ const initialData = [
     title: 'Checked casual full shirt',
     image: 'https://m.media-amazon.com/images/I/61UoMHRthTL._AC_UL480_QL65_.jpg',
     price: '₹ 684',
+    size: 'XXL',
     order_qty: 0,
   },
   {
@@ -73,6 +82,7 @@ const initialData = [
     title: 'Linning full shit',
     image: 'https://m.media-amazon.com/images/I/71BfHmJgTtL._AC_UL480_QL65_.jpg',
     price: '₹ 763',
+    size: 'L',
     order_qty: 0,
   },
   {
@@ -80,6 +90,7 @@ const initialData = [
     title: 'Blue dotted shirt',
     image: 'https://m.media-amazon.com/images/I/61BQlmyg41L._AC_UL480_QL65_.jpg',
     price: '₹ 812',
+    size: 'XL',
     order_qty: 0,
   },
   {
@@ -87,6 +98,7 @@ const initialData = [
     title: 'Checked yellow shirt',
     image: 'https://m.media-amazon.com/images/I/71uJmh8dJAL._AC_UL480_QL65_.jpg',
     price: '₹ 699',
+    size: 'M',
     order_qty: 0,
   },
 ];
@@ -154,6 +166,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <Navbar/>
       <h2>Product List</h2>
 
       <div className="card-grid">
@@ -164,7 +177,7 @@ const HomePage = () => {
             </div>
 
             <h3>{item.title}</h3>
-            <div className="flex-content">
+            <div className="content-flex">
               <p>{item.price}</p>
               {item.order_qty < 1 ? (
                 <button className="add-button" id={item.id} onClick={handleAddCart}>
@@ -172,13 +185,13 @@ const HomePage = () => {
                 </button>
               ) : (
                 <div className="add-button">
-                  <button className='add-button-increment-decrement' id={item.id} onClick={handleDecrement}>
+                  <div className='add-button-increment-decrement' id={item.id} onClick={handleDecrement}>
                     {item.order_qty > 1 ? '-' : '🗑️'}
-                  </button>
-                  <button className='add-button-increment-decrement' style={{ margin: '0 10px' }}>{item.order_qty}</button>
-                  <button className='add-button-increment-decrement' id={item.id} onClick={handleIncrement}>
+                  </div>
+                  <div className='add-button-increment-decrement'>{item.order_qty}</div>
+                  <div className='add-button-increment-decrement' id={item.id} onClick={handleIncrement}>
                     +
-                  </button>
+                  </div>
                 </div>
               )}
             </div>

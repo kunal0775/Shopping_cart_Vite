@@ -1,14 +1,14 @@
 .form-container{
     background-image: url('https://static.webuters.com/2023/02/Unique-Features-of-Shopify-1024x576.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     background-blend-mode: color-burn;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
+
 .form-box{
     box-shadow: 0 0 5px 0;
     backdrop-filter: blur(10px);
@@ -38,6 +38,9 @@ input:not(:placeholder-shown) {
     background-color: transparent;
     color: white;
     padding: 7px;
+}
+input:active {
+    color: transparent;
 }
 
 input:focus{
