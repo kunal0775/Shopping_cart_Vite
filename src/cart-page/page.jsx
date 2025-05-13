@@ -1,6 +1,7 @@
 import '../styling/cart-page/cart-page.scss';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { cartState, totalCartAmountState } from '../state/cart-state';
+import Navbar from '../components/navbar';
 
 
 const CartPage = () => {
@@ -28,6 +29,7 @@ const CartPage = () => {
   }
   return (
     <div>
+      <Navbar/>
     {cartData.map((item) => (
       <div key={item.id} className='flexbox'>
         <div className="shopping-card-container">
@@ -47,9 +49,9 @@ const CartPage = () => {
               <p className='size'>Size: {item.size}</p>
         
               <div className='button-point'>
-                  <button className='button-increment-decrement-point' id={item.id} onClick={handleDecrement}>{item.order_qty>1?"-":"🗑️"}</button>
-                  <button className='button-increment-decrement-point'> {item.order_qty} </button>
-                  <button className='button-increment-decrement-point' id={item.id} onClick={handleIncrement}>+</button>
+                  <div className='button-increment-decrement-point' id={item.id} onClick={handleDecrement}>{item.order_qty>1?"-":"🗑️"}</div>
+                  <div className='button-increment-decrement-point'> {item.order_qty} </div>
+                  <div className='button-increment-decrement-point' id={item.id} onClick={handleIncrement}>+</div>
               </div>
             </div>
             <p className='price'>{item.price}</p>

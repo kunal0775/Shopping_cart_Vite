@@ -3,15 +3,15 @@ import './App.css';
 import HomePage from './home/page';
 import CartPage from './cart-page/page';
 import { Routes, Route } from 'react-router-dom';
-import NavBar from './components/navbar';
+import LoginPage from './login-page/login';
 
 function App() {
   return (
     <>
-      <NavBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/cart-page" element={<CartPage />} />
+        <Route path="/login-page" element={<LoginPage />} />
       </Routes>
     </>
   );

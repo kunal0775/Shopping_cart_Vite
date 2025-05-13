@@ -1,11 +1,3 @@
-.flex-content{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin: 0.3rem;
-}
-
 h2{
     width: 94%;
     place-self: center;
@@ -58,26 +50,28 @@ h2{
       font-size: 1rem;
       color: #666;
     }
-
-    .add-button{
-        margin-left: 5%;
-        padding: 5px 8px 5px 8px;
-        border-radius: 20px;
-        font-size: 13px;
-        background-color: #ffd814;
-        margin-bottom: 20px;
-        border: none;
-      
-        .add-button-increment-decrement{
-            border: none;
-            background-color: transparent;
-            font-size: 15px;
-            cursor: pointer;
-        }
-
-        &:hover{
-            background-color: #ffd000;
-
-        }
-    }
   }
+
+  .add-button{
+    display: flex;
+    padding: 8px 12px 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    background-color: #ffd814;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+
+    &:hover{
+      background-color: #ffd000;
+}
+  }
+  
+.add-button-increment-decrement{
+    padding: 0px 6px;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    cursor: pointer;
+}
+

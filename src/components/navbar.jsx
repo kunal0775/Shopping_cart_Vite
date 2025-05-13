@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styling/components/navbar.scss';
 import { FaSearch } from 'react-icons/fa';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
 const navigate = useNavigate();
@@ -20,17 +20,21 @@ const handleNavigate = (path) => {
 
                 {/* Search Input */}
                 <div className='input-box'>
-                <FaSearch size={18} style={{ marginRight: '8px' }} />
+                <FaSearch style={{ marginRight: '8px' }} />
                 <input type="text" placeholder='search the items'/>
                 </div>
 
+
+
                 {/* Cart logo */}
-            <div className='flexBox'>
-              <img width="40%" src="icon-cart.png" alt=" " onClick={()=>handleNavigate('/cart-page')}/>
+            <div className='nav-links'>
+              <div className='cart-flex'>
+                <img width="40%" src="icon-cart.png" alt=" " onClick={()=>handleNavigate('/cart-page')}/>
                 <p>Cart</p>
+              </div>
+              <p className='login' onClick={()=>handleNavigate('/login-page')}>Login</p>
             </div>
         </div>
-
     </div>
   )
 }
